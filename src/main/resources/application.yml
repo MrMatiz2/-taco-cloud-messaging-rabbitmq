@@ -1,0 +1,6 @@
+spring:
+  rabbitmq:
+    password: guest
+    template:
+      exchange: tacocloud.order
+      routing-key: kitchens.central
