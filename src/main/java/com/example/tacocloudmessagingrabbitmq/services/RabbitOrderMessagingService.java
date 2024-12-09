@@ -19,7 +19,7 @@ public class RabbitOrderMessagingService implements OrderMessagingService {
 
     @Override
     public void sendOrder(TacoOrder order) {
-        MessageConverter converter  = rabbitTemplate.getMessageConverter();
+        MessageConverter converter = rabbitTemplate.getMessageConverter();
         MessageProperties props = new MessageProperties();
         props.setHeader("X_ORDER_SOURCE", "WEB");
         Message message = converter.toMessage(order, props);
